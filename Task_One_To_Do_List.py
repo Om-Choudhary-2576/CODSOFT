@@ -27,23 +27,17 @@ while True:
     
     elif choice == '3':
         if tasks:
-            try:
-                task_num = int(input("Enter task number to remove: "))
-                if 1 <= task_num <= len(tasks):
-                   
-                    task_to_delete = tasks[task_num - 1]
-                    
-                    tasks.remove(task_to_delete)
-                    print(f"Successfully removed: {task_to_delete}")
-                else:
-                    print("Invalid number.")
-            except ValueError:
-                print("Please enter a valid number.")
+            task_num = int(input("Enter the task number to remove: "))
+            if 0 < task_num <= len(tasks):
+                removed = tasks.pop(task_num - 1)
+                print(f"Removed: {removed}")
+            else:
+                print("Invalid number.")
         else:
             print("Nothing to remove.")
             
     elif choice == '4':
-        print("Exiting....")
+        print("Goodbye!")
         break
     else:
         print("Invalid choice, try again.")
